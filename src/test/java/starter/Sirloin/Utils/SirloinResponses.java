@@ -1,4 +1,4 @@
 package starter.Sirloin.Utils;
 
-public class SirloinAPI {
+public class SirloinResponses {
 }
