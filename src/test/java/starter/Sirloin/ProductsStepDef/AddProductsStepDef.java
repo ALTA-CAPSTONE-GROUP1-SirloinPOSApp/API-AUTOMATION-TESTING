@@ -92,7 +92,7 @@ public class AddProductsStepDef {
         productAPI.addProduct(json, token);
     }
     
-     @Given("Post addProduct with invalid token")
+    @Given("Post addProduct with invalid token")
     public void postAddProductWithInvalidToken() {
         String invalidToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjI0fQ.pI_POmwE6aheZHbhJE0nudMNJKl8Ug-60bNzp2r7_3o";
         File json = new File(Constant.addPRODUCT_JSON_REQUEST + "/addProductValid.json");
