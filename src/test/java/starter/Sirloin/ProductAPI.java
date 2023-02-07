@@ -12,8 +12,8 @@ public class ProductAPI {
 
     public static String ADD_PRODUCT = Constant.BASE_URL + "/products";
 
-    @Step("Add product valid input and token")
-    public void addProductValid(File json, String token) {
+    @Step("Add product with token")
+    public void addProduct(File json, String token) {
         SerenityRest.given()
                 .header("Authorization", "Bearer " + token)
                 .contentType(ContentType.JSON)
