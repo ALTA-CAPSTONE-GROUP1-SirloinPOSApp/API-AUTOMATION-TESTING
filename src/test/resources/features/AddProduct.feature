@@ -71,3 +71,12 @@ Feature: Testing API Add Product
     And Response body page should be "duplicated product"
     And Validate json schema addProduct negative case
 
+  Scenario: POST add product with invalid bearer token
+    Given Post addProduct with invalid token
+    When Send request addProduct
+    Then Should return status code 401
+    And Response body page should be "invalid or expired jwt"
+    And Validate json schema addProduct negative case
+
+
+
