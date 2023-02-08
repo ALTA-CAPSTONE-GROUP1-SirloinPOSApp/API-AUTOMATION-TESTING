@@ -48,11 +48,11 @@ Feature: Testing API Update Product
       | 78 | 401        | "invalid or expired jwt" |
 
   Scenario Outline: PUT update product with invalid json
-    Given Put updateProduct with invalid json and id 78
+    Given Put updateProduct with invalid json and id <id>
     When Send request updateProduct
-    Then Should return status code 400
+    Then Should return status code <statusCode>
     And Response body page should be <message>
     Examples:
-      | id | statusCode | message                  |
-      | 78 | 401        | "invalid or expired jwt" |
+      | id | statusCode | message     |
+      | 78 | 400        | "<message>" |
 
