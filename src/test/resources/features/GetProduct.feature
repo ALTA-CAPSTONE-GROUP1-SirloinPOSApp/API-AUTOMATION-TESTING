@@ -19,7 +19,7 @@ Feature: Testing API Get Product
       | id | statusCode |
       | 68 | 200        |
 
-  Scenario Outline: Get display product list by invalid
+  Scenario Outline: Get display product list by invalid id
     Given Get display product by invalid "<id>"
     When Send request getproduct by invalid id
     Then Should return status code <statusCode>

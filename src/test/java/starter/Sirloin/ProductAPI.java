@@ -20,6 +20,8 @@ public class ProductAPI {
 
     public static String PUT_PRODUCT = Constant.BASE_URL + "/products/{id}";
 
+    public static String PUT_PRODUCT_INVALID_ID = Constant.BASE_URL + "/products/{id}";
+
 
     @Step("Add product with token")
     public void addProduct(File json, String token) {
@@ -30,21 +32,21 @@ public class ProductAPI {
     }
 
     @Step("Get product with token")
-    public void getProduct(String token){
+    public void getProduct(String token) {
         SerenityRest.given()
-                .header("Authorization","Bearer " + token);
+                .header("Authorization", "Bearer " + token);
     }
 
     @Step("Get product by id with token")
-    public void getProductById(int id, String token){
+    public void getProductById(int id, String token) {
         SerenityRest.given()
                 .header("Authorization", "Bearer " + token)
                 .pathParam("id", id);
 
     }
 
-    @Step("Get product by invalid id with token")
-    public void getProductInvalidID(String id, String token){
+    @Step("Get product with invalid id and token")
+    public void getProductInvalidID(String id, String token) {
         SerenityRest.given()
                 .header("Authorization", "Bearer " + token)
                 .pathParam("id", id);
@@ -52,11 +54,21 @@ public class ProductAPI {
     }
 
     @Step("Update product with token")
-    public void updateProduct(String id, String token){
+    public void updateProduct(File json, int id, String token) {
         SerenityRest.given()
                 .header("Authorization", "Bearer " + token)
-                .pathParam("id", id);
-
+                .pathParam("id", id)
+                .contentType(ContentType.JSON)
+                .body(json);
     }
 
+    @Step("Update product with invalid id and token")
+    public void updateProductInvalidID(File json, String id, String token) {
+        SerenityRest.given()
+                .header("Authorization", "Bearer " + token)
+                .pathParam("id", id)
+                .contentType(ContentType.JSON)
+                .body(json);
+
+    }
 }
