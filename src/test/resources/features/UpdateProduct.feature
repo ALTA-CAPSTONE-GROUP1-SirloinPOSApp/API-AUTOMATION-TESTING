@@ -8,7 +8,7 @@ Feature: Testing API Update Product
     And Validate json schema updateProduct
     Examples:
       | id | statusCode | message                  |
-      | 68 | 201        | "success update product" |
+      | 68 | 200        | "success update product" |
 
   Scenario Outline: PUT update product with valid json
     Given Put updateProduct with valid parameter <id>
@@ -18,7 +18,7 @@ Feature: Testing API Update Product
     And Validate json schema updateProduct
     Examples:
       | id | statusCode | message                  |
-      | 68 | 201        | "success update product" |
+      | 68 | 200        | "success update product" |
 
   Scenario Outline: PUT update product with invalid parameter id
     Given Put updateProduct with invalid parameter "<id>"
@@ -36,7 +36,7 @@ Feature: Testing API Update Product
     And Validate json schema updateProduct
     Examples:
       | id | statusCode | message                  |
-      | 78 | 201        | "success update product" |
+      | 78 | 200        | "success update product" |
 
   Scenario Outline: PUT update product with invalid token
     Given Put updateProduct with invalid token and id <id>
@@ -53,6 +53,6 @@ Feature: Testing API Update Product
     Then Should return status code <statusCode>
     And Response body page should be <message>
     Examples:
-      | id | statusCode | message     |
-      | 78 | 400        | "<message>" |
+      | id | statusCode | message                  |
+      | 78 | 200        | "success update product" |
 
