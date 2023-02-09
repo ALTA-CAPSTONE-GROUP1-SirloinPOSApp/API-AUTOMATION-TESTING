@@ -111,6 +111,7 @@ public class LoginStepDef {
     @When("Send request login invalid path")
     public void sendRequestLoginInvalidPath() {
         SerenityRest.when().post(AuthAPI.LOGIN_INVALID_PATH);
+
     }
 }
 
