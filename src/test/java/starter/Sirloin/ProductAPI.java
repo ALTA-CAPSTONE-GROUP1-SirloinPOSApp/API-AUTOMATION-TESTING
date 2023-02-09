@@ -20,7 +20,7 @@ public class ProductAPI {
 
     public static String PUT_PRODUCT = Constant.BASE_URL + "/products/{id}";
 
-    public static String PUT_PRODUCT_INVALID_ID = Constant.BASE_URL + "/products/{id}";
+    public static String DELETE_PRODUCT= Constant.BASE_URL + "/products/{id}";
 
 
     @Step("Add product with token")
@@ -69,6 +69,19 @@ public class ProductAPI {
                 .pathParam("id", id)
                 .contentType(ContentType.JSON)
                 .body(json);
+    }
 
+    @Step("Delete product")
+    public void deleteProduct(String token, int id){
+        SerenityRest.given()
+                .header("Authorization","Bearer " + token)
+                .pathParam("id", id);
+    }
+
+    @Step("Delete product invalid parameter")
+    public void deleteProductInvalidID(String token, String id){
+        SerenityRest.given()
+                .header("Authorization","Bearer " + token)
+                .pathParam("id", id);
     }
 }
