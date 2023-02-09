@@ -12,7 +12,7 @@ import starter.Sirloin.Utils.SirloinResponses;
 
 import java.io.File;
 
-import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.*;
 
 public class GetProductStepDef {
 
@@ -71,7 +71,7 @@ public class GetProductStepDef {
     @And("Response body should be {string}")
     public void responseBodyShouldBe(String message) {
         SerenityRest.then()
-                .body(SirloinResponses.MESSAGE, equalTo(message));
+                .body(containsString(message)); // response body not in json but just string
     }
 
     @Given("Get display all product with valid token")
