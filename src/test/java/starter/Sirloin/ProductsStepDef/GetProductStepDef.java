@@ -19,11 +19,9 @@ public class GetProductStepDef {
     @Steps
     ProductAPI productAPI;
 
-    String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjU0fQ.4OjLwaZl68OM8zHYCSmNhD3S579V8n8JV0iT2GwAD6c";
-
     @Given("Get display all product")
     public void getDisplayAllProduct() {
-        productAPI.getProduct(token);
+        productAPI.getProduct(Constant.TOKEN);
     }
 
     @When("Send request getproduct")
@@ -39,7 +37,7 @@ public class GetProductStepDef {
 
     @Given("Get display product by id {int}")
     public void getDisplayProductById(int id) {
-        productAPI.getProductById(id, token);
+        productAPI.getProductById(id, Constant.TOKEN);
     }
 
     @When("Send request getproduct by id")
@@ -61,7 +59,7 @@ public class GetProductStepDef {
 
     @Given("Get display product by invalid {string}")
     public void getDisplayProductByInvalid(String id) {
-        productAPI.getProductInvalidID(id, token);
+        productAPI.getProductInvalidID(id, Constant.TOKEN);
     }
 
     @When("Send request getproduct by invalid id")
@@ -76,14 +74,13 @@ public class GetProductStepDef {
 
     @Given("Get display all product with valid token")
     public void getDisplayAllProductWithValidToken() {
-        productAPI.getProduct(token);
+        productAPI.getProduct(Constant.TOKEN);
 
     }
 
     @Given("Get display all product with invalid token")
     public void getDisplayAllProductWithInvalidToken() {
-        String invalidToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp5cnVlLCJ1c2VySUQiOjU0fQ.4OjLwaZl68OM8zHYCSmNhD3S579V8n8JV0iT2GwAD6c";
-        productAPI.getProduct(invalidToken);
+        productAPI.getProduct(Constant.INVALIDTOKEN);
     }
 
     @And("Validate json schema getProduct negative case")

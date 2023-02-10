@@ -16,10 +16,9 @@ public class DeleteProductStepDef {
     @Steps
     ProductAPI productAPI;
 
-    String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjU0fQ.4OjLwaZl68OM8zHYCSmNhD3S579V8n8JV0iT2GwAD6c";
     @Given("Delete product with valid parameter id {int}")
     public void deleteProductWithValidParameterId(int id) {
-        productAPI.deleteProduct(token, id);
+        productAPI.deleteProduct(Constant.TOKEN, id);
     }
 
     @When("Send request deleteProduct")
@@ -35,12 +34,11 @@ public class DeleteProductStepDef {
 
     @Given("Delete product with invalid parameter {string}")
     public void deleteProductWithInvalidParameter(String id) {
-        productAPI.deleteProductInvalidID(token, id);
+        productAPI.deleteProductInvalidID(Constant.TOKEN, id);
     }
 
     @Given("Delete product with invalid token with id {int}")
     public void deleteProductWithInvalidTokenWithId(int id) {
-        String invalidToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp5cnVlLCJ1c2VySUQiOjU0fQ.4OjLwaZl68OM8zHYCSmNhD3S579V8n8JV0iT2GwAD6c";
-        productAPI.deleteProduct(invalidToken, id);
+        productAPI.deleteProduct(Constant.INVALIDTOKEN, id);
     }
 }
