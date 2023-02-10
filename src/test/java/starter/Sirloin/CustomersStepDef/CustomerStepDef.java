@@ -25,4 +25,22 @@ public class CustomerStepDef {
     public void sendRequestInputCustomer() {
         SerenityRest.when().post(CustomerAPI.INPUT_CUSTOMER);
     }
+
+    @Given("Post inputCustomer with invalid json")
+    public void postInputCustomerWithInvalidJson() {
+        File json = new File(Constant.inputCUSTOMER_JSON_REQUEST + "/inputCustomerInvalid.json");
+        customerAPI.inputCustomer(json, token);
+    }
+
+    @Given("Post inputCustomer with registered email")
+    public void postInputCustomerWithRegisteredEmail() {
+        File json = new File(Constant.inputCUSTOMER_JSON_REQUEST + "/inputCustomerRegisteredEmail.json");
+        customerAPI.inputCustomer(json, token);
+    }
+
+    @Given("Post inputCustomer with registered phone number")
+    public void postInputCustomerWithRegisteredPhoneNumber() {
+        File json = new File(Constant.inputCUSTOMER_JSON_REQUEST + "/inputCustomerRegisteredPhone.json");
+        customerAPI.inputCustomer(json, token);
+    }
 }
