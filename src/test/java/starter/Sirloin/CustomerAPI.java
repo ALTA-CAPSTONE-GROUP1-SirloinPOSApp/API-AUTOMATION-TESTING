@@ -17,6 +17,12 @@ public class CustomerAPI {
 
     public static String GET_CUSTOMER_InvalidID = Constant.BASE_URL + "/customers/{id}";
 
+    public static String EDIT_CUSTOMER_ByID = Constant.BASE_URL + "/customers/{id}";
+
+    public static String EDIT_CUSTOMER_InvalidID = Constant.BASE_URL + "/customers/{id}";
+
+
+
 
     @Step("Add customer with token")
     public void inputCustomer(File json, String token) {
@@ -44,6 +50,26 @@ public class CustomerAPI {
         SerenityRest.given()
                 .header("Authorization", "Bearer " + token)
                 .pathParam("id", id);
+    }
+
+    @Step("Edit customer with id")
+    public void editCustomerById(String token, int id, File json) {
+        SerenityRest.given()
+                .header("Authorization", "Bearer " + token)
+                .pathParam("id", id)
+                .contentType(ContentType.JSON)
+                .body(json);
+
+    }
+
+    @Step("Edit customer with invalid id")
+    public void editCustomerInvalidId(String token, String id, File json) {
+        SerenityRest.given()
+                .header("Authorization", "Bearer " + token)
+                .pathParam("id", id)
+                .contentType(ContentType.JSON)
+                .body(json);
+
     }
 
 }
