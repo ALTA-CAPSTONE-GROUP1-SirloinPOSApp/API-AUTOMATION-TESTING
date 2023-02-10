@@ -5,16 +5,16 @@ import io.cucumber.java.en.When;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 import starter.Sirloin.CustomerAPI;
+import starter.Sirloin.Utils.Constant;
 
 public class GetCustomerStepdef {
 
     @Steps
     CustomerAPI customerAPI;
 
-    String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjU0fQ.4OjLwaZl68OM8zHYCSmNhD3S579V8n8JV0iT2GwAD6c";
     @Given("Get display all customer")
     public void getDisplayAllCustomer() {
-        customerAPI.getCustomer(token);
+        customerAPI.getCustomer(Constant.TOKEN);
     }
 
     @When("Send request getCustomer")
@@ -24,7 +24,7 @@ public class GetCustomerStepdef {
 
     @Given("Get display customer with id {int}")
     public void getDisplayCustomerWithId(int id) {
-        customerAPI.getCustomerById(token, id);
+        customerAPI.getCustomerById(Constant.TOKEN, id);
     }
 
     @When("Send request getCustomer with id")
@@ -34,7 +34,7 @@ public class GetCustomerStepdef {
 
     @Given("Get display customer with invalid id {string}")
     public void getDisplayCustomerWithInvalidId(String id) {
-        customerAPI.getCustomerInvalidId(token,id);
+        customerAPI.getCustomerInvalidId(Constant.TOKEN,id);
     }
 
     @When("Send request getCustomer with invalid id")

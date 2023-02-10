@@ -15,12 +15,11 @@ public class UpdateProductStepDef {
 
     @Steps
     ProductAPI productAPI;
-    String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjU0fQ.4OjLwaZl68OM8zHYCSmNhD3S579V8n8JV0iT2GwAD6c";
 
     @Given("Put updateProduct with valid parameter {int}")
     public void putUpdateProductWithValidParameter(int id) {
         File json = new File(Constant.putPRODUCT_JSON_REQUEST + "/updateProductValid.json");
-        productAPI.updateProduct(json, id, token);
+        productAPI.updateProduct(json, id, Constant.TOKEN);
     }
 
     @When("Send request updateProduct")
@@ -37,25 +36,24 @@ public class UpdateProductStepDef {
     @Given("Put updateProduct with invalid parameter {string}")
     public void putUpdateProductWithInvalidParameter(String id) {
         File json = new File(Constant.putPRODUCT_JSON_REQUEST + "/updateProductValid.json");
-        productAPI.updateProductInvalidID(json, id, token);
+        productAPI.updateProductInvalidID(json, id, Constant.TOKEN);
     }
 
     @Given("Put updateProduct with valid token and id {int}")
     public void putUpdateProductWithValidTokenAndId(int id) {
         File json = new File(Constant.putPRODUCT_JSON_REQUEST + "/updateProductValid2.json");
-        productAPI.updateProduct(json, id, token);
+        productAPI.updateProduct(json, id, Constant.TOKEN);
     }
 
     @Given("Put updateProduct with invalid token and id {int}")
     public void putUpdateProductWithInvalidTokenAndId(int id) {
-        String invalidToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjU0fQ.4OjLwaZl68OM8zHYCSmNhD3S579V8n8JV0iT2GsAD6Q";
         File json = new File(Constant.putPRODUCT_JSON_REQUEST + "/updateProductValid2.json");
-        productAPI.updateProduct(json, id, invalidToken);
+        productAPI.updateProduct(json, id, Constant.INVALIDTOKEN);
     }
 
     @Given("Put updateProduct with invalid json and id {int}")
     public void putUpdateProductWithInvalidJsonAndId(int id) {
         File json = new File(Constant.putPRODUCT_JSON_REQUEST + "/updateProductInvalid.json");
-        productAPI.updateProduct(json, id, token);
+        productAPI.updateProduct(json, id, Constant.TOKEN);
     }
 }
