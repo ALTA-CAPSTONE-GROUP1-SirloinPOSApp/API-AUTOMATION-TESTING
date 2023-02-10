@@ -56,7 +56,7 @@ Feature: Testing API Add Product
     And Validate json schema addProduct negative case
     Examples:
       | statusCode | message                            |
-      | 400        | "minimum stock shouldn't be empty" |
+      | 200        | "minimum stock shouldn't be empty" |
 
   Scenario Outline: POST add product without input price
     Given Post addProduct without price

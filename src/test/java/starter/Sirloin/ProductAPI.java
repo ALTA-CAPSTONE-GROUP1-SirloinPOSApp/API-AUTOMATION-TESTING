@@ -22,7 +22,6 @@ public class ProductAPI {
 
     public static String DELETE_PRODUCT= Constant.BASE_URL + "/products/{id}";
 
-
     @Step("Add product with token")
     public void addProduct(File json, String token) {
         SerenityRest.given()

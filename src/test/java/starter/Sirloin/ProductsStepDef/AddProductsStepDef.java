@@ -5,6 +5,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
 import io.restassured.module.jsv.JsonSchemaValidator;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 import starter.Sirloin.AuthAPI;
@@ -91,7 +93,7 @@ public class AddProductsStepDef {
         File json = new File(Constant.addPRODUCT_JSON_REQUEST + "/addProductWithExistingProductName.json");
         productAPI.addProduct(json, token);
     }
-    
+
     @Given("Post addProduct with invalid token")
     public void postAddProductWithInvalidToken() {
         String invalidToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjI0fQ.pI_POmwE6aheZHbhJE0nudMNJKl8Ug-60bNzp2r7_3o";
