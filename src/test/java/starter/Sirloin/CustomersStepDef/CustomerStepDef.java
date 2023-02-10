@@ -43,4 +43,34 @@ public class CustomerStepDef {
         File json = new File(Constant.inputCUSTOMER_JSON_REQUEST + "/inputCustomerRegisteredPhone.json");
         customerAPI.inputCustomer(json, token);
     }
+
+    @Given("Get display all customer")
+    public void getDisplayAllCustomer() {
+        customerAPI.getCustomer(token);
+    }
+
+    @When("Send request getCustomer")
+    public void sendRequestGetCustomer() {
+        SerenityRest.when().get(CustomerAPI.GET_CUSTOMER);
+    }
+
+    @Given("Get display customer with id {int}")
+    public void getDisplayCustomerWithId(int id) {
+        customerAPI.getCustomerById(token, id);
+    }
+
+    @When("Send request getCustomer with id")
+    public void sendRequestGetCustomerWithId() {
+        SerenityRest.when().get(CustomerAPI.GET_CUSTOMER_ByID);
+    }
+
+    @Given("Get display customer with invalid id {string}")
+    public void getDisplayCustomerWithInvalidId(String id) {
+        customerAPI.getCustomerInvalidId(token, id);
+    }
+
+    @When("Send request getCustomer with invalid id")
+    public void sendRequestGetCustomerWithInvalidId() {
+        SerenityRest.when().get(CustomerAPI.GET_CUSTOMER_InvalidID);
+    }
 }
