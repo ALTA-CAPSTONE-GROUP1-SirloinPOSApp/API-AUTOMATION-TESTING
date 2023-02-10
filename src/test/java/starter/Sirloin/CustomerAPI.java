@@ -9,13 +9,14 @@ import java.io.File;
 
 public class CustomerAPI {
 
-    public static String ADD_CUSTOMERS = Constant.BASE_URL + "/customers";
+    public static String INPUT_CUSTOMER = Constant.BASE_URL + "/customers";
 
-    @Step
-    public void addCustomers(String token, File json){
+    @Step("Add customer with token")
+    public void inputCustomer(File json, String token) {
         SerenityRest.given()
                 .header("Authorization", "Bearer " + token)
                 .contentType(ContentType.JSON)
                 .body(json);
     }
+
 }
