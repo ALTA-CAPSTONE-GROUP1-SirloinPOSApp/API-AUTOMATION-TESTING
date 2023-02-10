@@ -13,6 +13,7 @@ public class Constant {
     public static String putPRODUCT_JSON_SCHEMA = DIR + "/src/test/resources/JSON/JsonSchema/UpdateProduct";
     public static String deletePRODUCT_JSON_SCHEMA = DIR + "/src/test/resources/JSON/JsonSchema/DeleteProduct";
     public static String inputCUSTOMER_JSON_REQUEST = DIR + "/src/test/resources/JSON/Request/InputCustomer";
+    public static String editCUSTOMER_JSON_REQUEST = DIR + "/src/test/resources/JSON/Request/EditCustomer";
 
 
 }
