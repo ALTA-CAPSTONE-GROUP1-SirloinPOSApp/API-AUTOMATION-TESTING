@@ -1,5 +1,6 @@
 Feature: Testing API Update Product
 
+  @CapStone @Positive-Case @Product
   Scenario Outline: PUT update product with valid parameter id
     Given Put updateProduct with valid parameter <id>
     When Send request updateProduct
@@ -10,6 +11,7 @@ Feature: Testing API Update Product
       | id | statusCode | message                  |
       | 68 | 200        | "success update product" |
 
+  @CapStone @Positive-Case @Product
   Scenario Outline: PUT update product with valid json
     Given Put updateProduct with valid parameter <id>
     When Send request updateProduct
@@ -20,6 +22,7 @@ Feature: Testing API Update Product
       | id | statusCode | message                  |
       | 68 | 200        | "success update product" |
 
+  @CapStone @Negative-Case @Product
   Scenario Outline: PUT update product with invalid parameter id
     Given Put updateProduct with invalid parameter "<id>"
     When Send request updateProduct
@@ -28,6 +31,7 @@ Feature: Testing API Update Product
       | id  | statusCode |
       | abc | 400        |
 
+  @CapStone @Positive-Case @Product
   Scenario Outline: PUT update product with valid token
     Given Put updateProduct with valid token and id <id>
     When Send request updateProduct
@@ -38,6 +42,7 @@ Feature: Testing API Update Product
       | id | statusCode | message                  |
       | 78 | 200        | "success update product" |
 
+  @CapStone @Negative-Case @Product
   Scenario Outline: PUT update product with invalid token
     Given Put updateProduct with invalid token and id <id>
     When Send request updateProduct
@@ -47,6 +52,7 @@ Feature: Testing API Update Product
       | id | statusCode | message                  |
       | 78 | 401        | "invalid or expired jwt" |
 
+  @CapStone @Positive-Case @Product
   Scenario Outline: PUT update product with invalid json
     Given Put updateProduct with invalid json and id <id>
     When Send request updateProduct

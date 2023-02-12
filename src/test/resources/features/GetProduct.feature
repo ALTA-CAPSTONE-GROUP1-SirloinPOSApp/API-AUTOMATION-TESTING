@@ -1,5 +1,6 @@
 Feature: Testing API Get Product
 
+  @CapStone @Positive-Case @Product
   Scenario Outline: Get display all product list
     Given Get display all product
     When Send request getproduct
@@ -9,6 +10,7 @@ Feature: Testing API Get Product
       | statusCode |
       | 200        |
 
+  @CapStone @Positive-Case @Product
   Scenario Outline: Get display product list by id
     Given Get display product by id <id>
     When Send request getproduct by id
@@ -19,6 +21,7 @@ Feature: Testing API Get Product
       | id | statusCode |
       | 68 | 200        |
 
+  @CapStone @Negative-Case @Product
   Scenario Outline: Get display product list by invalid id
     Given Get display product by invalid "<id>"
     When Send request getproduct by invalid id
@@ -28,6 +31,7 @@ Feature: Testing API Get Product
       | id  | statusCode | message                    |
       | abc | 400        | wrong product id parameter |
 
+  @CapStone @Positive-Case @Product
   Scenario Outline: Get display all product with valid token
     Given Get display all product with valid token
     When Send request getproduct
@@ -37,6 +41,7 @@ Feature: Testing API Get Product
       | statusCode |
       | 200        |
 
+  @CapStone @Negative-Case @Product
   Scenario Outline: Get display all product with invalid token
     Given Get display all product with invalid token
     When Send request getproduct
