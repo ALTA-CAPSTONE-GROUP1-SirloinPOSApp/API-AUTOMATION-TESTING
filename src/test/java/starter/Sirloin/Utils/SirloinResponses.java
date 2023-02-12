@@ -28,4 +28,5 @@ public class SirloinResponses {
     public static String SUPPLIER = "data.supplier";
 
     public static String ITEM_SOLD = "data.item_sold";
+    public static String CODE = "code";
 }

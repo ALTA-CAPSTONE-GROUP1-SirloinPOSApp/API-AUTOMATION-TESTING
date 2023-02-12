@@ -18,5 +18,16 @@ public class Constant {
     public static String inputCUSTOMER_JSON_REQUEST = DIR + "/src/test/resources/JSON/Request/InputCustomer";
     public static String editCUSTOMER_JSON_REQUEST = DIR + "/src/test/resources/JSON/Request/EditCustomer";
 
+    public static String REGISTER_JSON_REQUEST = DIR + "/src/test/resources/JSON/Request/Register";
+    public static String REGISTER_JSON_SCHEMA = DIR + "/src/test/resources/JSON/JsonSchema/RegisterSchema";
+
+    public static String USERS_JSON_REQUEST = DIR + "/src/test/resources/JSON/Request/UserTenant";
+    public static String USERS_JSON_SCHEMA = DIR + "/src/test/resources/JSON/JsonSchema/UserTenant";
+
+    public static String ADMIN_JSON_SCHEMA = DIR + "/src/test/resources/JSON/JsonSchema/GetAdmin";
+
+    public static String POST_TRANSACTION_JSON_REQUEST = DIR + "/src/test/resources/JSON/Request/PostTransaction";
+    public static String POST_TRANSACTION_JSON_SCHEMA = DIR + "/src/test/resources/JSON/JsonSchema/PostTransaction";
+
 
 }
