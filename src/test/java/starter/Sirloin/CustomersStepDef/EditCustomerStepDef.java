@@ -4,6 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
+import starter.Sirloin.AuthStepDef.LoginStepDef.LoginStepDef;
 import starter.Sirloin.CustomerAPI;
 import starter.Sirloin.Utils.Constant;
 
@@ -18,7 +19,6 @@ public class EditCustomerStepDef {
     public void putEditCustomerWithValidId(int id) {
         File json = new File(Constant.editCUSTOMER_JSON_REQUEST + "/editCustomerValid.json");
         customerAPI.editCustomerById(Constant.TOKEN, id, json);
-
     }
 
     @When("Send request editCustomer")
