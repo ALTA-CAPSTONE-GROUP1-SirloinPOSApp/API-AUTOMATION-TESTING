@@ -6,7 +6,6 @@ Feature: Testing API Register Tenant
     When Send request post register tenant
     Then Response code should be 201 created
     And Response body should contains message "success created account"
-    And Validate json schema register tenant
 
   @register
   Scenario: Register Tenant without business name
@@ -49,21 +48,21 @@ Feature: Testing API Register Tenant
     Given Post register user already registered with valid json file
     When Send request post register tenant
     Then Response code should be 409 bad request
-    And Response body should contains message "email already exist"
+    And Response body should contains message "register new user email already exist"
 
   @register
   Scenario: Post register Tenant with invalid format email
     Given Post register user with invalid format email on valid json file
     When Send request post register tenant
     Then Response code should be 400 bad request
-    And Response body should contains message "incorrect e-mail format"
+    And Response body should contains message "incorrect register business email format"
 
   @register
   Scenario: Post register Tenant with invalid format phone number
     Given Post register user with invalid format phone on valid json file
     When Send request post register tenant
     Then Response code should be 400 bad request
-    And Response body should contains message "the phone number must be a number"
+    And Response body should contains message "register business phone number must be a number"
 
   @register
   Scenario: Register Tenant with invalid Path

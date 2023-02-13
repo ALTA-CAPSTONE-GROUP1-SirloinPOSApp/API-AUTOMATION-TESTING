@@ -1,9 +1,9 @@
 {
   "items": [
     {
-      "product_id": 86,
-      "quantity": 1,
-      "price": 12000
+      "product_id": 85,
+      "quantity": 10,
+      "price": 5000
     }
   ],
   "customer_id": 3,

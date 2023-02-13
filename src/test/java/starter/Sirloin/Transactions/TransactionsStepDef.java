@@ -104,8 +104,8 @@ public class TransactionsStepDef {
         transactionSirloinAPI.PostCreateNewTransactionWithToken(tokenuser, json);
     }
 
-    @Given("Post Create new transaction Authorized with empty payment method json file")
-    public void postCreateNewTransactionAuthorizedWithEmptyPaymentMethodJsonFile() {
+    @Given("Post Create new transaction Authorized with null payment method json file")
+    public void postCreateNewTransactionAuthorizedWithNullPaymentMethodJsonFile() {
         File json = new File(Constant.POST_TRANSACTION_JSON_REQUEST + "/PostTransactionUserEmptyPayMethod.json");
         transactionSirloinAPI.PostCreateNewTransactionWithToken(tokenuser, json);
     }

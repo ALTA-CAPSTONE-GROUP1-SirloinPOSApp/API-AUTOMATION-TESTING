@@ -1,5 +1,5 @@
 Feature:  Testing API Users Tenant
-
+# Get User
   @users
   Scenario: Get Tenant With Valid Path
     Given Get users tenant with valid path
@@ -42,6 +42,7 @@ Feature:  Testing API Users Tenant
     Then API response status code should be 404 not found
     And Response body should contains message "Not Found"
 
+# Put User Tenant
   @users
   Scenario: Put update tenant with Valid Json
     Given Put update tenant with valid json
@@ -54,14 +55,14 @@ Feature:  Testing API Users Tenant
     Given Put update tenant with invalid email json file
     When Send request update tenant
     Then Response code should be 400 bad request
-    And Response body should contains message "incorrect e-mail format"
+    And Response body should contains message "incorrect update business email format"
 
   @users
   Scenario: Put update tenant with invalid phone number json file
     Given Put update tenant with invalid phone number json file
     When Send request update tenant
     Then Response code should be 400 bad request
-    And Response body should contains message "the phone number must be a number"
+    And Response body should contains message "update business phone number must be a number"
 
   @users
   Scenario: Put update tenant with invalid password json file
@@ -76,7 +77,7 @@ Feature:  Testing API Users Tenant
     When Send request update tenant with invalid path
     Then API response status code should be 404 not found
 
-
+# Delete Tenant
   @users
   Scenario: Delete tenant with valid token on invalid path
     Given Delete tenant with valid token on invalid path
