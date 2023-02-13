@@ -1,4 +1,4 @@
-Feature: Testing API Users Tenant
+Feature: Testing API Admin Tenant
 
   @admin
 #    /products/admin

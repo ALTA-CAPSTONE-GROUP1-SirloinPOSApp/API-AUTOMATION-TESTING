@@ -74,8 +74,8 @@ Feature: Testing API Transactions
 
 #    bug
   @transaction
-  Scenario: Post Create new transaction Authorized with empty payment method json file
-    Given Post Create new transaction Authorized with empty payment method json file
+  Scenario: Post Create new transaction Authorized with null payment method json file
+    Given Post Create new transaction Authorized with null payment method json file
     When Send request post create new transaction
     Then Response code should be 400 bad request
     And Response body should contains message "wrong input (bad request)"
