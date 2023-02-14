@@ -31,6 +31,12 @@ public class AddProductsStepDef {
         SerenityRest.when().post(ProductAPI.ADD_PRODUCT);
     }
 
+    @And("Validate json schema addProduct")
+    public void validateJsonSchemaAddProduct() {
+        File jsonSchema = new File(Constant.addPRODUCT_JSON_SCHEMA + "/addProductSchema.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
+    }
+
     @Given("Post addProduct without upc")
     public void postAddProductWithoutUpc() {
         File json = new File(Constant.addPRODUCT_JSON_REQUEST + "/addProductWithoutUPC.json");
@@ -89,6 +95,12 @@ public class AddProductsStepDef {
     @Given("Post addProduct with existing product name")
     public void postAddProductWithExistingProductName() {
         File json = new File(Constant.addPRODUCT_JSON_REQUEST + "/addProductWithExistingProductName.json");
+        productAPI.addProduct(json, token);
+    }
+
+    @Given("Post addProduct with valid token")
+    public void postAddProductWithValidToken() {
+        File json = new File(Constant.addPRODUCT_JSON_REQUEST + "/addProductValid.json");
         productAPI.addProduct(json, token);
     }
 
