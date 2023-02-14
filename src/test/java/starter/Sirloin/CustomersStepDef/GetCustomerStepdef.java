@@ -43,4 +43,19 @@ public class GetCustomerStepdef {
     public void sendRequestGetCustomerWithInvalidId() {
         SerenityRest.when().get(CustomerAPI.GET_CUSTOMER_InvalidID);
     }
+
+    @Given("Get display customer with valid token")
+    public void getDisplayCustomerWithValidToken() {
+        customerAPI.getCustomer(Constant.TOKEN);
+    }
+
+    @Given("Get display customer with invalid token")
+    public void getDisplayCustomerWithInvalidToken() {
+        customerAPI.getCustomer(Constant.INVALIDTOKEN);
+    }
+
+    @Given("Get display customer without token")
+    public void getDisplayCustomerWithoutToken() {
+        customerAPI.getCustomer(Constant.WITHOUTTOKEN);
+    }
 }
