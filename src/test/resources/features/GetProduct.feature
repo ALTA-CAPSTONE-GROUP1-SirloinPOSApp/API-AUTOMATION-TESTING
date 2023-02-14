@@ -1,56 +1,46 @@
 Feature: Testing API Get Product
 
   @CapStone @Positive-Case @Product
-  Scenario Outline: Get display all product list
+  Scenario: Get display all product list
     Given Get display all product
     When Send request getproduct
-    Then Should return status code <statusCode>
+    Then Should return status code 200
     And Validate json schema getProduct
-    Examples:
-      | statusCode |
-      | 200        |
 
   @CapStone @Positive-Case @Product
-  Scenario Outline: Get display product list by id
-    Given Get display product by id <id>
+  Scenario: Get display product list by id
+    Given Get display product by id 68
     When Send request getproduct by id
-    Then Should return status code <statusCode>
-    And Response body should be <id>
+    Then Should return status code 200
     And Validate json schema getProduct by id
-    Examples:
-      | id | statusCode |
-      | 68 | 200        |
 
   @CapStone @Negative-Case @Product
-  Scenario Outline: Get display product list by invalid id
-    Given Get display product by invalid "<id>"
+  Scenario: Get display product list by invalid id
+    Given Get display product by invalid "abc"
     When Send request getproduct by invalid id
-    Then Should return status code <statusCode>
-    And Response body should be "<message>"
-    Examples:
-      | id  | statusCode | message                    |
-      | abc | 400        | wrong product id parameter |
+    Then Should return status code 400
+    And Response body should be "wrong product id parameter"
 
   @CapStone @Positive-Case @Product
-  Scenario Outline: Get display all product with valid token
+  Scenario: Get display all product with valid token
     Given Get display all product with valid token
     When Send request getproduct
-    Then Should return status code <statusCode>
+    Then Should return status code 200
     And Validate json schema getProduct
-    Examples:
-      | statusCode |
-      | 200        |
 
   @CapStone @Negative-Case @Product
-  Scenario Outline: Get display all product with invalid token
+  Scenario: Get display all product with invalid token
     Given Get display all product with invalid token
     When Send request getproduct
-    Then Should return status code <statusCode>
-    And Response body should be <message>
+    Then Should return status code 401
+    And Response body should be "invalid or expired jwt"
     And Validate json schema getProduct negative case
-    Examples:
-      | statusCode | message                  |
-      | 401        | "invalid or expired jwt" |
+
+  @CapStone @Negative-Case @Product
+  Scenario: Get display all product without token
+    Given Get display all product without token
+    When Send request getproduct
+    Then Should return status code 401
 
 
 

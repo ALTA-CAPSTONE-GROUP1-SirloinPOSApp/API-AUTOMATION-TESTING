@@ -6,6 +6,8 @@ public class Constant {
 
     public static String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJ1c2VySUQiOjU0fQ.4OjLwaZl68OM8zHYCSmNhD3S579V8n8JV0iT2GwAD6c";
     public static String INVALIDTOKEN = "invalid token";
+
+    public static String WITHOUTTOKEN = "";
     public static final String DIR = System.getProperty("user.dir");
     public static String LOGIN_JSON_REQUEST = DIR + "/src/test/resources/JSON/Request/Login";
     public static String LOGIN_JSON_SCHEMA = DIR + "/src/test/resources/JSON/JsonSchema/Login";
