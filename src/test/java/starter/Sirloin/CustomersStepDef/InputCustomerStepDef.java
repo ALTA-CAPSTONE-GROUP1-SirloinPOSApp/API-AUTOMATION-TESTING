@@ -42,4 +42,28 @@ public class InputCustomerStepDef {
         File json = new File(Constant.inputCUSTOMER_JSON_REQUEST + "/inputCustomerRegisteredPhone.json");
         customerAPI.inputCustomer(json, Constant.TOKEN);
     }
+
+    @Given("Post inputCustomer without email")
+    public void postInputCustomerWithoutEmail() {
+        File json = new File(Constant.inputCUSTOMER_JSON_REQUEST + "/inputCustomerWithoutEmail.json");
+        customerAPI.inputCustomer(json, Constant.TOKEN);
+    }
+
+    @Given("Post inputCustomer without name")
+    public void postInputCustomerWithoutName() {
+        File json = new File(Constant.inputCUSTOMER_JSON_REQUEST + "/inputCustomerWithoutName.json");
+        customerAPI.inputCustomer(json, Constant.TOKEN);
+    }
+
+    @Given("Post inputCustomer without address")
+    public void postInputCustomerWithoutAddress() {
+        File json = new File(Constant.inputCUSTOMER_JSON_REQUEST + "/inputCustomerWithoutAddress.json");
+        customerAPI.inputCustomer(json, Constant.TOKEN);
+    }
+
+    @Given("Post inputCustomer without phone number")
+    public void postInputCustomerWithoutPhoneNumber() {
+        File json = new File(Constant.inputCUSTOMER_JSON_REQUEST + "/inputCustomerWithoutPhone.json");
+        customerAPI.inputCustomer(json, Constant.TOKEN);
+    }
 }
