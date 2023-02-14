@@ -1,11 +1,11 @@
 {
-  "upc": "21365215112359",
-  "category": "drink",
-  "product_name": "Le Minerale",
-  "stock": 60,
+  "upc": "2236521501235",
+  "category": "Food",
+  "product_name": "richeese",
   "minimum_stock": 5,
-  "buying_price": 3000,
-  "price": 4500,
-  "product_image": "LeMinerale.png",
-  "supplier": "PT Tirta Fresindo Jaya"
+  "stock": 60,
+  "buying_price": 4000,
+  "price": 5000,
+  "product_image": "richeese_nabati.png",
+  "supplier": "PT Kaldu Sari Nabati"
 }
