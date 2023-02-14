@@ -1,11 +1,11 @@
 {
-  "upc": "2186561511235",
+  "upc": "2186561911235",
   "category": "drink",
-  "product_name": "Teh Inchi Ocha",
+  "product_name": "Teh Gelas",
   "minimum_stock": 5,
   "stock": 40,
   "buying_price": 3000,
   "price": 4500,
-  "product_image": "Teh_IchiOcha1.png",
-  "supplier": " PT Indofood Asahi Sukses Beverage"
+  "product_image": "Teh_Gelas.png",
+  "supplier": " Orang Tua Group"
 }
