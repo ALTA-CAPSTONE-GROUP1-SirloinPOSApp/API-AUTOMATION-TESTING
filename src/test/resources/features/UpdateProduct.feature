@@ -1,64 +1,47 @@
 Feature: Testing API Update Product
 
   @CapStone @Positive-Case @Product
-  Scenario Outline: PUT update product with valid parameter id
-    Given Put updateProduct with valid parameter <id>
+  Scenario: PUT update product with valid parameter id
+    Given Put updateProduct with valid parameter 131
     When Send request updateProduct
-    Then Should return status code <statusCode>
-    And Response body should be <message>
+    Then Should return status code 200
+    And Response body should be "success update product"
     And Validate json schema updateProduct
-    Examples:
-      | id | statusCode | message                  |
-      | 68 | 200        | "success update product" |
+
 
   @CapStone @Positive-Case @Product
-  Scenario Outline: PUT update product with valid json
-    Given Put updateProduct with valid parameter <id>
+  Scenario: PUT update product with valid json
+    Given Put updateProduct with valid parameter 131
     When Send request updateProduct
-    Then Should return status code <statusCode>
-    And Response body should be <message>
+    Then Should return status code 200
+    And Response body should be "success update product"
     And Validate json schema updateProduct
-    Examples:
-      | id | statusCode | message                  |
-      | 68 | 200        | "success update product" |
 
   @CapStone @Negative-Case @Product
-  Scenario Outline: PUT update product with invalid parameter id
-    Given Put updateProduct with invalid parameter "<id>"
+  Scenario: PUT update product with invalid parameter id
+    Given Put updateProduct with invalid parameter "abc"
     When Send request updateProduct
-    Then Should return status code <statusCode>
-    Examples:
-      | id  | statusCode |
-      | abc | 400        |
+    Then Should return status code 400
 
   @CapStone @Positive-Case @Product
-  Scenario Outline: PUT update product with valid token
-    Given Put updateProduct with valid token and id <id>
+  Scenario: PUT update product with valid token
+    Given Put updateProduct with valid token and id 78
     When Send request updateProduct
-    Then Should return status code <statusCode>
-    And Response body should be <message>
+    Then Should return status code 200
+    And Response body should be "success update product"
     And Validate json schema updateProduct
-    Examples:
-      | id | statusCode | message                  |
-      | 78 | 200        | "success update product" |
 
   @CapStone @Negative-Case @Product
-  Scenario Outline: PUT update product with invalid token
-    Given Put updateProduct with invalid token and id <id>
+  Scenario: PUT update product with invalid token
+    Given Put updateProduct with invalid token and id 78
     When Send request updateProduct
-    Then Should return status code <statusCode>
-    And Response body page should be <message>
-    Examples:
-      | id | statusCode | message                  |
-      | 78 | 401        | "invalid or expired jwt" |
+    Then Should return status code 401
+    And Response body page should be "invalid or expired jwt"
 
   @CapStone @Positive-Case @Product
-  Scenario Outline: PUT update product with invalid json
-    Given Put updateProduct with invalid json and id <id>
+  Scenario: PUT update product with invalid json
+    Given Put updateProduct with invalid json and id 78
     When Send request updateProduct
-    Then Should return status code <statusCode>
-    And Response body page should be <message>
-    Examples:
-      | id | statusCode | message                  |
-      | 78 | 200        | "success update product" |
+    Then Should return status code 200
+    And Response body page should be "success update product"
 
