@@ -1,111 +1,95 @@
 Feature: Testing API Add Product
 
-  
+  @CapStone @Positive-Case @Product
   Scenario: POST add product with valid json
     Given Post addProduct with valid json and token
     When Send request addProduct
     Then Should return status code 201
-    And Response body page should be <upc>, "<category>", "<product_name>", "<minimum_stock>", "<stock>", "<buying_price>", "<price>", "<product_image>" and "<suplier"
     And Validate json schema addProduct
 
-  Scenario Outline: POST add product without input upc
+  @CapStone @Negative-Case @Product
+  Scenario: POST add product without input upc
     Given Post addProduct without upc
     When Send request addProduct
-    Then Should return status code <statusCode>
-    And Response body page should be <message>
+    Then Should return status code 400
+    And Response body page should be "upc shouldn't be empty"
     And Validate json schema addProduct negative case
-    Examples:
-      | statusCode | message                  |
-      | 400        | "upc shouldn't be empty" |
 
-  Scenario Outline: POST add product without input category
+  @CapStone @Negative-Case @Product
+  Scenario: POST add product without input category
     Given Post addProduct without category
     When Send request addProduct
-    Then Should return status code <statusCode>
-    And Response body page should be <message>
+    Then Should return status code 400
+    And Response body page should be "category shouldn't be empty"
     And Validate json schema addProduct negative case
-    Examples:
-      | statusCode | message                       |
-      | 400        | "category shouldn't be empty" |
 
-  Scenario Outline: POST add product without input product name
+  @CapStone @Negative-Case @Product
+  Scenario: POST add product without input product name
     Given Post addProduct without product name
     When Send request addProduct
-    Then Should return status code <statusCode>
-    And Response body page should be <message>
+    Then Should return status code 400
+    And Response body page should be "product name shouldn't be empty"
     And Validate json schema addProduct negative case
-    Examples:
-      | statusCode | message                           |
-      | 400        | "product_name shouldn't be empty" |
 
-
-  Scenario Outline: POST add product without input number of stock
+  @CapStone @Negative-Case @Product
+  Scenario: POST add product without input number of stock
     Given Post addProduct without number of stock
     When Send request addProduct
-    Then Should return status code <statusCode>
-    And Response body page should be <message>
+    Then Should return status code 400
+    And Response body page should be "stock shouldn't be empty"
     And Validate json schema addProduct negative case
-    Examples:
-      | statusCode | message                    |
-      | 400        | "stock shouldn't be empty" |
 
-  Scenario Outline: POST add product without input minimum stock
+  @CapStone @Negative-Case @Product
+  Scenario: POST add product without input minimum stock
     Given Post addProduct without minimum stock
     When Send request addProduct
-    Then Should return status code <statusCode>
-    And Response body page should be <message>
+    Then Should return status code 201
+    And Response body page should be "minimum stock shouldn't be empty"
     And Validate json schema addProduct negative case
-    Examples:
-      | statusCode | message                            |
-      | 200        | "minimum stock shouldn't be empty" |
 
-  Scenario Outline: POST add product without input price
+  @CapStone @Negative-Case @Product
+  Scenario: POST add product without input price
     Given Post addProduct without price
     When Send request addProduct
-    Then Should return status code <statusCode>
-    And Response body page should be <message>
+    Then Should return status code 400
+    And Response body page should be "price shouldn't be empty"
     And Validate json schema addProduct negative case
-    Examples:
-      | statusCode | message                    |
-      | 400        | "price shouldn't be empty" |
 
-  Scenario Outline: POST add product without input product image
+  @CapStone @Negative-Case @Product
+  Scenario: POST add product without input product image
     Given Post addProduct without product image
     When Send request addProduct
-    Then Should return status code <statusCode>
-    And Response body page should be <message>
+    Then Should return status code 400
+    And Response body page should be "product image shouldn't be empty"
     And Validate json schema addProduct negative case
-    Examples:
-      | statusCode | message                            |
-      | 400        | "product image shouldn't be empty" |
 
-  Scenario Outline: POST add product with input existing upc
+  @CapStone @Negative-Case @Product
+  Scenario: POST add product with input existing upc
     Given Post addProduct with existing upc
     When Send request addProduct
-    Then Should return status code <statusCode>
-    And Response body page should be <message>
+    Then Should return status code 409
+    And Response body page should be "duplicated product on name"
     And Validate json schema addProduct negative case
-    Examples:
-      | statusCode | message              |
-      | 409        | "duplicated product" |
 
-  Scenario Outline: POST add product with input existing product name
+  @CapStone @Negative-Case @Product
+  Scenario: POST add product with input existing product name
     Given Post addProduct with existing product name
     When Send request addProduct
-    Then Should return status code <statusCode>
-    And Response body page should be <message>
+    Then Should return status code 409
+    And Response body page should be "duplicated product on name"
     And Validate json schema addProduct negative case
-    Examples:
-      | statusCode | message              |
-      | 409        | "duplicated product" |
 
-  Scenario Outline: POST add product with invalid bearer token
+  @CapStone @Negative-Case @Product
+  Scenario: POST add product with valid bearer token
+    Given Post addProduct with valid token
+    When Send request addProduct
+    Then Should return status code 201
+    And Validate json schema addProduct
+
+  @CapStone @Negative-Case @Product
+  Scenario: POST add product with invalid bearer token
     Given Post addProduct with invalid token
     When Send request addProduct
-    Then Should return status code <statusCode>
-    And Response body page should be <message>
+    Then Should return status code 401
+    And Response body page should be "invalid or expired jwt"
     And Validate json schema addProduct negative case
-    Examples:
-      | statusCode | message                  |
-      | 401        | "invalid or expired jwt" |
-
