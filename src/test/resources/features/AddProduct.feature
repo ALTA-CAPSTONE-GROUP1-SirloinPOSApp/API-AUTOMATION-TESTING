@@ -1,6 +1,6 @@
 Feature: Testing API Add Product
 
-  @CapStone @Positve-Case @Customer
+  
   Scenario: POST add product with valid json
     Given Post addProduct with valid json and token
     When Send request addProduct
