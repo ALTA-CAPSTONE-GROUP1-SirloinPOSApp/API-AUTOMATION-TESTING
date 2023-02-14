@@ -45,12 +45,6 @@ public class GetProductStepDef {
         SerenityRest.when().get(ProductAPI.GET_PRODUCT_ByID);
     }
 
-    @And("Response body should be {int}")
-    public void responseBodyShouldBe(int id) {
-        SerenityRest.then()
-                .body(SirloinResponses.ID, equalTo(id));
-    }
-
     @And("Validate json schema getProduct by id")
     public void validateJsonSchemaGetProductById() {
         File jsonSchema = new File(Constant.getPRODUCT_JSON_SCHEMA + "/getProductByIdSchema.json");
@@ -88,5 +82,10 @@ public class GetProductStepDef {
     public void validateJsonSchemaGetProductNegativeCase() {
         File jsonSchema = new File(Constant.getPRODUCT_JSON_SCHEMA + "/negativeCaseGetProductSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
+    }
+
+    @Given("Get display all product without token")
+    public void getDisplayAllProductWithoutToken() {
+        productAPI.getProduct(Constant.WITHOUTTOKEN);
     }
 }
