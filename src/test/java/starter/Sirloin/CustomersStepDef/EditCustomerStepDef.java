@@ -44,4 +44,22 @@ public class EditCustomerStepDef {
         File json = new File(Constant.editCUSTOMER_JSON_REQUEST + "/editCustomerInvalid.json");
         customerAPI.editCustomerById(Constant.TOKEN, id, json);
     }
+
+    @Given("Put editCustomer with valid token and id {int}")
+    public void putEditCustomerWithValidTokenAndId(int id) {
+        File json = new File(Constant.editCUSTOMER_JSON_REQUEST + "/editCustomerValid.json");
+        customerAPI.editCustomerById(Constant.TOKEN, id, json);
+    }
+
+    @Given("Put editCustomer with invalid token and id {int}")
+    public void putEditCustomerWithInvalidTokenAndId(int id) {
+        File json = new File(Constant.editCUSTOMER_JSON_REQUEST + "/editCustomerValid.json");
+        customerAPI.editCustomerById(Constant.INVALIDTOKEN, id, json);
+    }
+
+    @Given("Put editCustomer without token and id {int}")
+    public void putEditCustomerWithoutTokenAndId(int id) {
+        File json = new File(Constant.editCUSTOMER_JSON_REQUEST + "/editCustomerValid.json");
+        customerAPI.editCustomerById(Constant.WITHOUTTOKEN, id, json);
+    }
 }
