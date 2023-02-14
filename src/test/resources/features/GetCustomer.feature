@@ -16,4 +16,4 @@ Feature: Testing API Get Customer
   Scenario: Get display customer with invalid id
     Given Get display customer with invalid id "abc"
     When Send request getCustomer with invalid id
-    Then Should return status code 400
+    Then Should return status code 404

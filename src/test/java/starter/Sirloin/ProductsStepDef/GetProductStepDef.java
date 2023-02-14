@@ -66,6 +66,7 @@ public class GetProductStepDef {
     public void sendRequestGetproductByInvalidId() {
         SerenityRest.when().get(ProductAPI.GET_PRODUCT_INVALID_ID);
     }
+
     @And("Response body should be {string}")
     public void responseBodyShouldBe(String message) {
         SerenityRest.then()

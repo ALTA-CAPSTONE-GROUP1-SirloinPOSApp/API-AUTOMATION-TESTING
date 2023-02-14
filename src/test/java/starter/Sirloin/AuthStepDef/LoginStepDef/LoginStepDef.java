@@ -104,8 +104,8 @@ public class LoginStepDef {
 
     @Given("Post login with invalid path {int}")
     public void postLoginWithInvalidPath(int id) {
-        File json = new File(Constant.LOGIN_JSON_REQUEST+"/validEmailPass.json");
-        authAPI.invalidLoginPath(id,json);
+        File json = new File(Constant.LOGIN_JSON_REQUEST + "/validEmailPass.json");
+        authAPI.invalidLoginPath(id, json);
     }
 
     @When("Send request login invalid path")
