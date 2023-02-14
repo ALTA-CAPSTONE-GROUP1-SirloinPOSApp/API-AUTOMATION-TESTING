@@ -2,10 +2,12 @@ package starter.Sirloin.CustomersStepDef;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import io.restassured.response.Response;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 import starter.Sirloin.CustomerAPI;
 import starter.Sirloin.Utils.Constant;
+import starter.Sirloin.Utils.SirloinResponses;
 
 public class GetCustomerStepdef {
 
@@ -34,7 +36,7 @@ public class GetCustomerStepdef {
 
     @Given("Get display customer with invalid id {string}")
     public void getDisplayCustomerWithInvalidId(String id) {
-        customerAPI.getCustomerInvalidId(Constant.TOKEN,id);
+        customerAPI.getCustomerInvalidId(Constant.TOKEN, id);
     }
 
     @When("Send request getCustomer with invalid id")

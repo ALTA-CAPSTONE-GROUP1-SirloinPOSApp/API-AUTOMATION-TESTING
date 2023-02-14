@@ -6,6 +6,7 @@ public class SirloinResponses {
     public static String EMAIL = "data.email";
     public static String ADDRESS = "data.address";
     public static String PHONE_NUMBER = "data.phone_number";
+
     public static String TOKEN = "data.token";
     public static String MESSAGE = "message";
 
