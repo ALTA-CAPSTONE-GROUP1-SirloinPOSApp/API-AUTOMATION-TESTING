@@ -93,6 +93,3 @@ Feature: Testing API Add Product
     Then Should return status code 401
     And Response body page should be "invalid or expired jwt"
     And Validate json schema addProduct negative case
-
-
-
