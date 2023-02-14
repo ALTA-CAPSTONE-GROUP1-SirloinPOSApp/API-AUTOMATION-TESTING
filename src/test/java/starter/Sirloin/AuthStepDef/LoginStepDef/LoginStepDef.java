@@ -37,18 +37,6 @@ public class LoginStepDef {
         SerenityRest.then().statusCode(statusCode);
     }
 
-    @And("Response body page should be {int}, {string}, {string}, {string}, {string}, {string} and {string}")
-    public void responseBodyPageShouldBeIdAnd(int id, String business_name, String email, String address, String phone_number, String token, String message) {
-        SerenityRest.then()
-                .body(SirloinResponses.ID, equalTo(id))
-                .body(SirloinResponses.BUSINESS_NAME, equalTo(business_name))
-                .body(SirloinResponses.EMAIL, equalTo(email))
-                .body(SirloinResponses.ADDRESS, equalTo(address))
-                .body(SirloinResponses.PHONE_NUMBER, equalTo(phone_number))
-                .body(SirloinResponses.TOKEN, equalTo(token))
-                .body(SirloinResponses.MESSAGE, equalTo(message));
-    }
-
     @And("Validate json schema login")
     public void validateJsonSchemaLogin() {
         File jsonSchema = new File(Constant.LOGIN_JSON_SCHEMA + "/validEmailPassSchema.json");
@@ -75,6 +63,12 @@ public class LoginStepDef {
     @Given("Post login with empty email and valid password")
     public void postLoginWithEmptyEmailAndValidPassword() {
         File json = new File(Constant.LOGIN_JSON_REQUEST + "/emptyEmailValidPass.json");
+        authAPI.postLogin(json);
+    }
+
+    @Given("Post login with valid email and empty password")
+    public void postLoginWithValidEmailAndEmptyPassword() {
+        File json = new File(Constant.LOGIN_JSON_REQUEST + "/validEmailEmptyPass.json");
         authAPI.postLogin(json);
     }
 
