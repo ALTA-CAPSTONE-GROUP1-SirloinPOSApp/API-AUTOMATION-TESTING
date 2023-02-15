@@ -12,20 +12,20 @@ Feature: Testing API Input Customer
     Given Post inputCustomer with invalid json
     When Send request inputCustomer
     Then Should return status code 400
-    And Response body page should be "incorrect register customer email format"
+    And Response body page should be "register customer phone number must be a number"
 
   @CapStone @Negative-Case @Customer
   Scenario: POST input customer without input email
     Given Post inputCustomer without email
     When Send request inputCustomer
-    Then Should return status code 409
+    Then Should return status code 400
     And Response body page should be "required fields must be filled"
 
   @CapStone @Negative-Case @Customer
   Scenario: POST input customer without input name
     Given Post inputCustomer without name
     When Send request inputCustomer
-    Then Should return status code 409
+    Then Should return status code 400
     And Response body page should be "required fields must be filled"
 
 
@@ -33,7 +33,7 @@ Feature: Testing API Input Customer
   Scenario: POST input customer without input address
     Given Post inputCustomer without address
     When Send request inputCustomer
-    Then Should return status code 409
+    Then Should return status code 400
     And Response body page should be "required fields must be filled"
 
 
@@ -41,8 +41,8 @@ Feature: Testing API Input Customer
   Scenario: POST input customer without input phone number
     Given Post inputCustomer without phone number
     When Send request inputCustomer
-    Then Should return status code 409
-    And Response body page should be "irequired fields must be filled"
+    Then Should return status code 400
+    And Response body page should be "required fields must be filled"
 
 
   @CapStone @Negative-Case @Customer

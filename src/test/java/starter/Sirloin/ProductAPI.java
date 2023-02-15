@@ -20,6 +20,8 @@ public class ProductAPI {
 
     public static String PUT_PRODUCT = Constant.BASE_URL + "/products/{id}";
 
+    public static String PUT_PRODUCT_INVALID_ID = Constant.BASE_URL + "/products/{id}";
+
     public static String DELETE_PRODUCT= Constant.BASE_URL + "/products/{id}";
 
     @Step("Add product with token")

@@ -41,13 +41,13 @@ public class UpdateProductStepDef {
 
     @Given("Put updateProduct with valid token and id {int}")
     public void putUpdateProductWithValidTokenAndId(int id) {
-        File json = new File(Constant.putPRODUCT_JSON_REQUEST + "/updateProductValid2.json");
+        File json = new File(Constant.putPRODUCT_JSON_REQUEST + "/updateProductValid.json");
         productAPI.updateProduct(json, id, Constant.TOKEN);
     }
 
     @Given("Put updateProduct with invalid token and id {int}")
     public void putUpdateProductWithInvalidTokenAndId(int id) {
-        File json = new File(Constant.putPRODUCT_JSON_REQUEST + "/updateProductValid2.json");
+        File json = new File(Constant.putPRODUCT_JSON_REQUEST + "/updateProductValid.json");
         productAPI.updateProduct(json, id, Constant.INVALIDTOKEN);
     }
 
@@ -55,5 +55,10 @@ public class UpdateProductStepDef {
     public void putUpdateProductWithInvalidJsonAndId(int id) {
         File json = new File(Constant.putPRODUCT_JSON_REQUEST + "/updateProductInvalid.json");
         productAPI.updateProduct(json, id, Constant.TOKEN);
+    }
+
+    @When("Send request updateProduct Invalid")
+    public void sendRequestUpdateProductInvalid() {
+        SerenityRest.when().put(ProductAPI.PUT_PRODUCT_INVALID_ID);
     }
 }

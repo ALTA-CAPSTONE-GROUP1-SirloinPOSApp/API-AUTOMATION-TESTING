@@ -2,7 +2,7 @@ Feature: Testing API Delete Product
 
   @CapStone @Positive-Case @Product
   Scenario: DELETE product with valid parameter id
-    Given Delete product with valid parameter id 80
+    Given Delete product with valid parameter id 83
     When Send request deleteProduct
     Then Should return status code 200
     And Response body should be "success delete product"

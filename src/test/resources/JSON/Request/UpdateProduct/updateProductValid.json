@@ -1,11 +1,12 @@
 {
-  "upc": "2236521501235",
-  "category": "Food",
-  "product_name": "richeese",
+  "upc": "2196561511235",
+  "category": "drink",
+  "product_name": "Teh Inchi Ocha",
+  "stock": 40,
   "minimum_stock": 5,
-  "stock": 60,
-  "buying_price": 4000,
-  "price": 5000,
-  "product_image": "richeese_nabati.png",
-  "supplier": "PT Kaldu Sari Nabati"
+  "buying_price": 3000,
+  "price": 4500,
+  "product_image": "",
+  "supplier": " PT Indofood Asahi Sukses Beverage",
+  "items_sold": 0
 }
