@@ -22,8 +22,6 @@ public class CustomerAPI {
     public static String EDIT_CUSTOMER_InvalidID = Constant.BASE_URL + "/customers/{id}";
 
 
-
-
     @Step("Add customer with token")
     public void inputCustomer(File json, String token) {
         SerenityRest.given()
