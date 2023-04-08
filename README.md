@@ -1,7 +1,7 @@
 
-# API Automation Testing SirloinPOS
+# WEB Automation Testing SirloinPOS
 
-SirloinPOS ini proyek untuk membantu setiap toko untuk menjual produk bisnisnya, dan membantu mengelola barang masuk dan keluar. Banyak toko yang masih menambah/mengurangi stok produk secara manual, oleh karena itu SirloinPOS mencoba menangani pengguna untuk berubah dari manual menjadi otomatis dengan menggunakan sistem ini
+SirloinPOS ini proyek website yang saya gunakan untuk membuat website otomatis menggunakan selenium serenity BDD 
 
 
 ![Logo](https://sirloin-pos.vercel.app/assets/logo-07cbfc70.png)
@@ -16,22 +16,15 @@ SirloinPOS ini proyek untuk membantu setiap toko untuk menjual produk bisnisnya,
 
 ## Tech Stack
 
-**Manual Testing Tools :**
-
-* Google Chrome (API Browser)
-
-
 **Automation Testing Tools :**
 
 * IntellijIDEA
 * Java
-* POSTMAN
-* Swagger API
 
 **Framework Used in Automation Testing :**
 
 * BDD Cucumber
-* REST ASSURED
+* Selenium
 
 ** Documentation Tools :**
 
@@ -40,7 +33,3 @@ SirloinPOS ini proyek untuk membantu setiap toko untuk menjual produk bisnisnya,
 **Collaboration :**
 
 * GitHub (Versioning Control System Platform & Work Management Tools)
-* Telegram
-* Discord
-* Zoom
-* Google Meet
